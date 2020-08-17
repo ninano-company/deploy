@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+.fakeLoader {
+ width:100%;
+ height:100%;
+ position: absolute;
+ left:0;
+ top:0;
+ background-color: #fff;
+ z-index: 9999;
+}
+.fakeLoader div {
+  position: fixed;
+}
+.ball1{
+width: 50px;
+height: 50px;
+top: calc(50% - 50px/2);
+left: calc(50% - 50px/2);
+background-color: #fe2775;
+opacity: 0.6;
+position: absolute;
+border-radius: 50px;
+animation: bounce 2.0s infinite ease-in-out;
+}
+.ball2{
+  width: 10px;
+  height: 10px;
+  top: calc(50% - 10px/2);
+  left: calc(50% - 10px/2);
+  background-color: #fe2775;
+  opacity: 0.6;
+  position: absolute;
+  border-radius: 50px;
+  animation: bounce2 2.0s infinite ease-in-out;
+
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(0);
+    -webkit-transform: scale(0); }
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1); } }
+@keyframes bounce2 {
+      0%, 100% {
+        transform: scale(5);
+        -webkit-transform: scale(5); }
+      50% {
+        transform: scale(0);
+        -webkit-transform: scale(0); } }

@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+	<meta name="description" content="Admin, Dashboard, Bootstrap" />
+	<link rel="shortcut icon" sizes="196x196" href="../assets/images/logo.png">
+	<title>Trinity - Bootstrap Admin Template</title>
+
+	<link rel="stylesheet" href="../libs/bower/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.css">
+	<!-- build:css ../assets/css/app.min.css -->
+	<link rel="stylesheet" href="../libs/bower/animate.css/animate.min.css">
+	<link rel="stylesheet" href="../libs/bower/fullcalendar/dist/fullcalendar.min.css">
+	<link rel="stylesheet" href="../libs/bower/perfect-scrollbar/css/perfect-scrollbar.css">
+	<link rel="stylesheet" href="../assets/css/bootstrap.css">
+	<link rel="stylesheet" href="../assets/css/core.css">
+	<link rel="stylesheet" href="../assets/css/app.css">
+	<!-- endbuild -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900,300">
+	<style>
+		.fsize-12 {
+			font-size: 12px;
+		}
+
+		tr {
+			height: 37px;
+		}
+
+		.grid_tc {
+			display: grid;
+			grid-template-columns: 2fr 1fr 1fr 2fr;
+		}
+	</style>
+	<script src="../libs/bower/breakpoints.js/dist/breakpoints.min.js"></script>
+	<script src="../libs/misc/include-html/include-html.js"></script>
+	<script>
+		Breakpoints();
+	</script>
+</head>
+
+<body class="menubar-left menubar-unfold menubar-light theme-primary">
+	<!--============= start main area -->
+
+	<!-- APP NAVBAR ==========-->
+	<nav id="app-navbar" class="navbar navbar-inverse navbar-fixed-top primary">
+
+		<!-- navbar header -->
+		<div class="navbar-header">
+			<button type="button" id="menubar-toggle-btn" class="navbar-toggle visible-xs-inline-block navbar-toggle-left hamburger hamburger--collapse js-hamburger">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="hamburger-box"><span class="hamburger-inner"></span></span>
+			</button>
+
+			<button type="button" class="navbar-toggle navbar-toggle-right collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="zmdi zmdi-hc-lg zmdi-more"></span>
+			</button>
+
+			<button type="button" class="navbar-toggle navbar-toggle-right collapsed" data-toggle="collapse" data-target="#navbar-search" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="zmdi zmdi-hc-lg zmdi-search"></span>
+			</button>
+
+			<a href="../index.html" class="navbar-brand">
+				<span class="brand-icon"><i class="fa fa-gg"></i></span>
+				<span class="brand-name">Trinity</span>
+			</a>
+		</div><!-- .navbar-header -->
+
+		<div class="navbar-container container-fluid">
+			<div class="collapse navbar-collapse" id="app-navbar-collapse">
+				<ul class="nav navbar-toolbar navbar-toolbar-left navbar-left">
+					<li class="hidden-float hidden-menubar-top">
+						<a href="javascript:void(0)" role="button" id="menubar-fold-btn" class="hamburger hamburger--arrowalt is-active js-hamburger">
+							<span class="hamburger-box"><span class="hamburger-inner"></span></span>
+						</a>
+					</li>
+					<li>
+						<h5 class="page-title hidden-menubar-top hidden-float">Dashboard</h5>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-toolbar navbar-toolbar-right navbar-right">
+					<li class="nav-item dropdown hidden-float">
+						<a href="javascript:void(0)" data-toggle="collapse" data-target="#navbar-search" aria-expanded="false">
+							<i class="zmdi zmdi-hc-lg zmdi-search"></i>
+						</a>
+					</li>
+
+					<li class="dropdown">
+						<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-hc-lg zmdi-notifications"></i></a>
+						<div class="media-group dropdown-menu animated flipInY">
+							<a href="javascript:void(0)" class="media-group-item">
+								<div class="media">
+									<div class="media-left">
+										<div class="avatar avatar-xs avatar-circle">
+											<img src="../assets/images/221.jpg" alt="">
+											<i class="status status-online"></i>
+										</div>
+									</div>
+									<div class="media-body">
+										<h5 class="media-heading">John Doe</h5>
+										<small class="media-meta">Active now</small>
+									</div>
+								</div>
+							</a><!-- .media-group-item -->
+
+							<a href="javascript:void(0)" class="media-group-item">
+								<div class="media">
+									<div class="media-left">
+										<div class="avatar avatar-xs avatar-circle">
+											<img src="../assets/images/205.jpg" alt="">
+											<i class="status status-offline"></i>
+										</div>
+									</div>
+									<div class="media-body">
+										<h5 class="media-heading">John Doe</h5>
+										<small class="media-meta">2 hours ago</small>
+									</div>
+								</div>
+							</a><!-- .media-group-item -->
+
+							<a href="javascript:void(0)" class="media-group-item">
+								<div class="media">
+									<div class="media-left">
+										<div class="avatar avatar-xs avatar-circle">
+											<img src="../assets/images/207.jpg" alt="">
+											<i class="status status-away"></i>
+										</div>
+									</div>
+									<div class="media-body">
+										<h5 class="media-heading">Sara Smith</h5>
+										<small class="media-meta">idle 5 min ago</small>
+									</div>
+								</div>
+							</a><!-- .media-group-item -->
+
+							<a href="javascript:void(0)" class="media-group-item">
+								<div class="media">
+									<div class="media-left">
+										<div class="avatar avatar-xs avatar-circle">
+											<img src="../assets/images/211.jpg" alt="">
+											<i class="status status-away"></i>
+										</div>
+									</div>
+									<div class="media-body">
+										<h5 class="media-heading">Donia Dyab</h5>
+										<small class="media-meta">idle 5 min ago</small>
+									</div>
+								</div>
+							</a><!-- .media-group-item -->
+						</div>
+					</li>
+
+					<li class="dropdown">
+						<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-hc-lg zmdi-settings"></i></a>
+						<ul class="dropdown-menu animated flipInY">
+							<li><a href="javascript:void(0)"><i class="zmdi m-r-md zmdi-hc-lg zmdi-account-box"></i>My Profile</a></li>
+							<li><a href="javascript:void(0)"><i class="zmdi m-r-md zmdi-hc-lg zmdi-balance-wallet"></i>Balance</a></li>
+							<li><a href="javascript:void(0)"><i class="zmdi m-r-md zmdi-hc-lg zmdi-phone-msg"></i>Connection<span class="label label-primary">3</span></a></li>
+							<li><a href="javascript:void(0)"><i class="zmdi m-r-md zmdi-hc-lg zmdi-info"></i>privacy</a></li>
+						</ul>
+					</li>
+
+					<li class="dropdown">
+						<a href="javascript:void(0)" class="side-panel-toggle" data-toggle="class" data-target="#side-panel" data-class="open" role="button"><i class="zmdi zmdi-hc-lg zmdi-apps"></i></a>
+					</li>
+				</ul>
+			</div>
+		</div><!-- navbar-container -->
+	</nav>
+	<!--========== END app navbar -->
+
+	<!-- APP ASIDE ==========-->
+	<aside include-html="aside.html" id="menubar" class="menubar light">
+	</aside>
+	<!--========== END app aside -->
+
+	<!-- navbar search -->
+	<div id="navbar-search" class="navbar-search collapse">
+		<div class="navbar-search-inner">
+			<form action="#">
+				<span class="search-icon"><i class="fa fa-search"></i></span>
+				<input class="search-field" type="search" placeholder="search..." />
+			</form>
+			<button type="button" class="search-close" data-toggle="collapse" data-target="#navbar-search" aria-expanded="false">
+				<i class="fa fa-close"></i>
+			</button>
+		</div>
+		<div class="navbar-search-backdrop" data-toggle="collapse" data-target="#navbar-search" aria-expanded="false"></div>
+	</div><!-- .navbar-search -->
+
+	<!-- APP MAIN ==========-->
+	<main id="app-main" class="app-main">
+		<div class="profile-header">
+			<div class="profile-cover">
+				<div class="cover-user m-b-lg">
+					<div>
+						<div class="avatar avatar-xl avatar-circle">
+							<a href="./chart.mom.html">
+								<img class="img-responsive" src="../assets/images/sj2.jpg" alt="산모" />
+							</a>
+						</div>
+					</div>
+					<div>
+						<div class="avatar avatar-md avatar-circle">
+							<a href="./chart.baby.html">
+								<img class="img-responsive" src="../assets/images/jian.jpg" alt="아기" />
+							</a>
+						</div><!-- .avatar -->
+					</div>
+					<div>
+						<span class="cover-icon"><i class="fa fa-envelope-o"></i></span>
+					</div>
+				</div>
+				<div class="text-center grid_tc">
+					<div>
+					</div>
+					<div>
+						<h4 class="profile-info-name m-b-lg"><a class="title-color">김선지</a></h4>
+						<h4 class="profile-info-name m-b-lg"><a class="title-color">35 세</a></h5>
+					</div>
+					<div>
+						<h4 class="profile-info-name m-b-lg"><a class="title-color">땡이 </a></h5>
+							<h4 class="profile-info-name m-b-lg"><a class="title-color">3일 차</a></h5>
+					</div>
+				</div>
+			</div><!-- .profile-cover -->
+
+			<div class="promo-footer">
+				<div class="row no-gutter">
+					<div class="col-sm-2 col-sm-offset-3 col-xs-6 promo-tab">
+						<div class="text-center">
+							<small>호실</small>
+							<h4 class="m-0 m-t-xs">1001호</h4>
+						</div>
+					</div>
+					<div class="col-sm-2 col-xs-6 promo-tab">
+						<div class="text-center">
+							<small>입실(예정)일</small>
+							<h4 class="m-0 m-t-xs">2019-10-30</h4>
+						</div>
+					</div>
+					<div class="col-sm-2 col-xs-12 promo-tab">
+						<div class="text-center">
+							<small>퇴실(예정)일</small>
+							<h4 class="m-0 m-t-xs">2019-11-15</h4>
+						</div>
+					</div>
+				</div>
+			</div><!-- .promo-footer -->
+		</div><!-- .profile-header -->
+
+		<div class="wrap">
+			<section class="app-content">
+				<div class="row">
+					<div class="col-xs-9">
+						<div id="profile-tabs" class="nav-tabs-horizontal white m-b-lg">
+							<!-- tabs list -->
+							<ul class="nav nav-tabs" role="tablist">
+								<li role="presentation" class="active"><a href="#profile-stream" aria-controls="stream" role="tab" data-toggle="tab">신생아 정보</a></li>
+								<li role="presentation"><a href="#profile-photos" aria-controls="photos" role="tab" data-toggle="tab">신생아경과기록</a></li>
+								<li role="presentation"><a href="#profile-friends" aria-controls="friends" role="tab" data-toggle="tab">상담 내역</a></li>
+							</ul><!-- .nav-tabs -->
+							<!-- Tab panes -->
+							<div class="tab-content text-center fsize-12">
+								<div role="tabpanel" class="tab-pane in active fade" id="profile-stream">
+									<div class="media stream-post">
+										<table class="table table-striped">
+											<colgroup>
+												<col class="col-xs-2" />
+												<col class="col-xs-2" />
+												<col class="col-xs-2" />
+												<col class="col-xs-2" />
+												<col class="col-xs-2" />
+												<col class="col-xs-2" />
+											</colgroup>
+											<tr>
+												<td>출생일</td>
+												<td>2019-10-28</td>
+												<td>출산병원</td>
+												<td>차병원</td>
+												<td>출생 시 체중</td>
+												<td>3.2</td>
+											</tr>
+											<tr>
+												<td>분만형태</td>
+												<td>자연분만</td>
+												<td>재태기간(주)</td>
+												<td>40</td>
+												<td>입실시 체중</td>
+												<td>3.0</td>
+											</tr>
+										</table>
+									</div>
+								</div><!-- .tab-pane -->
+
+								<div role="tabpanel" id="profile-photos" class="tab-pane fade p-md">
+									<div class="row text-center">
+										<table class="table table-striped">
+											<colgroup>
+												<col class="col-xs-2" />
+												<col class="col-xs-2" />
+												<col class="col-xs-1" />
+												<col class="col-xs-1" />
+												<col class="col-xs-1" />
+												<col class="col-xs-1" />
+												<col class="col-xs-2" />
+												<col class="col-xs-2" />
+											</colgroup>
+											<tr>
+												<td>날짜</td>
+												<td>Cord</td>
+												<td>재원일</td>
+												<td>생후일</td>
+												<td colspan="2">Test</td>
+												<td>체중</td>
+												<td>증감량</td>
+											</tr>
+											<tr>
+												<td>2019-10-30</td>
+												<td>무</td>
+												<td>1</td>
+												<td>3</td>
+												<td>유</td>
+												<td>무</td>
+												<td>3</td>
+												<td>-0.2</td>
+											</tr>
+										</table>
+										<table class="table table-striped">
+											<colgroup>
+												<col class="col-xs-2" />
+												<col class="col-xs-1" />
+												<col class="col-xs-3" />
+												<col class="col-xs-3" />
+												<col class="col-xs-3" />
+											</colgroup>
+											<tr>
+												<td><strong>활력징후</strong></td>
+												<td><strong>정상범위</strong></td>
+												<td><strong>D</strong></td>
+												<td><strong>E</strong></td>
+												<td><strong>N</strong></td>
+											</tr>
+											<tr>
+												<td>Temperature</td>
+												<td>36.5~37.4</td>
+												<td>36.7</td>
+												<td>36.8</td>
+												<td>36.7</td>
+											</tr>
+											<tr>
+												<td>Pulse</td>
+												<td>120~160</td>
+												<td>134</td>
+												<td>129</td>
+												<td>127</td>
+											</tr>
+											<tr>
+												<td>Respiration</td>
+												<td>40~60</td>
+												<td>52</td>
+												<td>51</td>
+												<td>56</td>
+											</tr>
+										</table>
+
+										<hr class="widget-separator" style="margin-top: 20px; margin-bottom: 20px;">
+										<h4 class="widget-header">건강 기록</h4>
+									
+										<table class="table	table-striped">
+											<colgroup>
+												<col class="col-xs-2">
+												<col class="col-xs-1">
+												<col class="col-xs-1">
+												<col class="col-xs-1">
+												<col class="col-xs-1">
+												<col class="col-xs-1">
+												<col class="col-xs-1">
+												<col class="col-xs-1">
+												<col class="col-xs-3">
+											</colgroup>
+											<tr>
+												<td><strong>날짜</strong></td>
+												<td><strong>시간</strong></td>
+												<td><strong>직접수유</strong></td>
+												<td><strong>Food</strong></td>
+												<td><strong>수유량(cc)</strong></td>
+												<td><strong>구토</strong></td>
+												<td><strong>소변</strong></td>
+												<td><strong>대변</strong></td>
+												<td><strong>특이사항</strong></td>
+											</tr>
+											<tr>
+												<td>2019-11-15</td>
+												<td>01:28</td>
+												<td><i class="fa fa-close"></i></td>
+												<td>모유</td>
+												<td>50</td>
+												<td><i class="fa fa-close"></i></td>
+												<td><i class="fa fa-close"></i></td>
+												<td><i class="fa fa-close"></i></td>
+												<td>Code Oozing, Code Care</td>
+											</tr>
+											<tr>
+												<td>2019-11-15</td>
+												<td>03:07</td>
+												<td><i class="fa fa-close"></i></td>
+												<td>모유</td>
+												<td>50</td>
+												<td><i class="fa fa-close"></i></td>
+												<td><i class="fa fa-circle-o"></i></td>
+												<td>쾌변</td>
+												<td>Code Oozing, Code Care</td>
+											</tr>
+											<tr>
+												<td>2019-11-15</td>
+												<td>05:13</td>
+												<td><i class="fa fa-close"></i></td>
+												<td>분유</td>
+												<td>50</td>
+												<td><i class="fa fa-close"></i></td>
+												<td><i class="fa fa-circle-o"></i></td>
+												<td><i class="fa fa-close"></i></td>
+												<td>Code Oozing, Code Care, 콧소리 거침</td>
+											</tr>
+											<tr>
+												<td>2019-11-15</td>
+												<td>08:01</td>
+												<td><i class="fa fa-circle-o"></i></td>
+												<td>모유</td>
+												<td>50</td>
+												<td><i class="fa fa-circle-o"></i></td>
+												<td><i class="fa fa-circle-o"></i></td>
+												<td><i class="fa fa-close"></i></td>
+												<td>Code Care</td>
+											</tr>
+											<tr>
+												<td>2019-11-15</td>
+												<td>10:52</td>
+												<td><i class="fa fa-circle-o"></i></td>
+												<td>모유</td>
+												<td>50</td>
+												<td><i class="fa fa-close"></i></td>
+												<td><i class="fa fa-circle-o"></i></td>
+												<td><i class="fa fa-close"></i></td>
+												<td>Code Care, 외출</td>
+											</tr>
+											<tr>
+												<td>2019-11-15</td>
+												<td>12:47</td>
+												<td><i class="fa fa-close"></i></td>
+												<td>모유</td>
+												<td>50</td>
+												<td><i class="fa fa-close"></i></td>
+												<td><i class="fa fa-circle-o"></i></td>
+												<td>쾌변</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td colspan="2">수유횟수</td>
+												<td>6</td>
+											</tr>
+
+										</table>
+									</div><!-- .row -->
+								</div><!-- .tab-pane -->
+
+								<div role="tabpanel" class="tab-pane fade p-md" id="profile-friends">
+									<div class="row">
+										<div class="col-md-6 col-sm-6">
+										</div><!-- END column -->
+
+										<div class="col-md-6 col-sm-6">
+										</div><!-- END column -->
+
+										<div class="col-md-6 col-sm-6">
+										</div><!-- END column -->
+
+										<div class="col-md-6 col-sm-6">
+										</div><!-- END column -->
+
+										<div class="col-md-6 col-sm-6">
+										</div><!-- END column -->
+
+										<div class="col-md-6 col-sm-6">
+										</div><!-- END column -->
+
+										<div class="col-md-6 col-sm-6">
+										</div><!-- END column -->
+
+										<div class="col-md-6 col-sm-6">
+										</div><!-- END column -->
+									</div><!-- .row -->
+								</div><!-- .tab-pane -->
+							</div><!-- .tab-content -->
+						</div><!-- #profile-components -->
+					</div><!-- END column -->
+					<div class="col-xs-3">
+						<div class="row">
+							<div class="col-md-12 col-sm-6">
+								<div class="widget who-to-follow-widget">
+									<div class="widget-header p-h-lg p-v-md">
+										<h4 class="widget-title">관련 인물</h4>
+									</div>
+									<hr class="widget-separator m-0">
+									<div class="media-group">
+										<div class="media-group-item b-0 p-h-sm">
+											<div class="media">
+												<div class="media-left">
+													<div class="avatar avatar-md avatar-circle">
+														<img src="../assets/images/kgb.jpg" alt="">
+														<i class="status status-online"></i>
+													</div>
+												</div>
+												<div class="media-body">
+													<h5 class="media-heading"><a href="javascript:void(0)">김건홍</a></h5>
+													<small class="media-meta">배우자</small>
+												</div>
+											</div>
+										</div><!-- .media-group-item -->
+
+										<div class="media-group-item b-0 p-h-sm">
+											<div class="media">
+												<div class="media-left">
+													<div class="avatar avatar-md avatar-circle">
+														<img src="../assets/images/209.jpg" alt="">
+														<i class="status status-offline"></i>
+													</div>
+												</div>
+												<div class="media-body">
+													<h5 class="media-heading"><a href="javascript:void(0)">가족1</a></h5>
+													<small class="media-meta">가족</small>
+												</div>
+											</div>
+										</div><!-- .media-group-item -->
+
+										<div class="media-group-item b-0 p-h-sm">
+											<div class="media">
+												<div class="media-left">
+													<div class="avatar avatar-md avatar-circle">
+														<img src="../assets/images/203.jpg" alt="">
+														<i class="status status-away"></i>
+													</div>
+												</div>
+												<div class="media-body">
+													<h5 class="media-heading"><a href="javascript:void(0)">보호사1</a></h5>
+													<small class="media-meta">전담 보호사(주간)</small>
+												</div>
+											</div>
+										</div><!-- .media-group-item -->
+
+										<div class="media-group-item b-0 p-h-sm">
+											<div class="media">
+												<div class="media-left">
+													<div class="avatar avatar-md avatar-circle">
+														<img src="../assets/images/202.jpg" alt="">
+														<i class="status status-away"></i>
+													</div>
+												</div>
+												<div class="media-body">
+													<h5 class="media-heading"><a href="javascript:void(0)">보호사2</a></h5>
+													<small class="media-meta">보조 보호사(야간)</small>
+												</div>
+											</div>
+										</div><!-- .media-group-item -->
+									</div>
+								</div><!-- .widget -->
+							</div><!-- END column -->
+
+							<div class="col-md-12 col-sm-6">
+								<div class="widget navigation-widget">
+									<div class="widget-header p-h-lg p-v-md">
+										<h4 class="widget-title">메뉴</h4>
+									</div>
+									<hr class="widget-separator m-0">
+									<div class="list-group">
+										<a href="javascript:void(0)" class="list-group-item"><i class="zmdi m-r-md zmdi-hc-lg zmdi-account-box"></i>관리 스케쥴</a>
+										<a href="javascript:void(0)" class="list-group-item"><i class="zmdi m-r-md zmdi-hc-lg zmdi-balance-wallet"></i>활동 내역
+											<span class="badge bg-primary">8</span>
+										</a>
+										<a href="javascript:void(0)" class="list-group-item">
+											<i class="zmdi m-r-md zmdi-hc-lg zmdi-globe"></i>비상연락망
+										</a>
+										<hr>
+										<a href="javascript:void(0)" class="list-group-item"><i class="zmdi m-r-md zmdi-hc-lg zmdi-calendar"></i>혜택</a>
+										<a href="javascript:void(0)" class="list-group-item"><i class="zmdi m-r-md zmdi-hc-lg zmdi-help"></i>지원</a>
+									</div>
+								</div><!-- .widget -->
+							</div><!-- END column -->
+						</div><!-- .row -->
+
+					</div><!-- END column -->
+				</div><!-- .row -->
+			</section><!-- #dash-content -->
+		</div><!-- .row -->
+
+		<!-- Likes/comments Modal -->
+		<div id="likesModal" class="modal fade" tabindex="-1" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">3 people like this</h4>
+					</div>
+					<div class="modal-body">
+						<ul class="list-group m-0">
+							<li class="list-group-item">
+								<div class="media">
+									<div class="media-left">
+										<a href="javascript:void(0)" class="avatar avatar-sm">
+											<img class="img-responsive" src="../assets/images/221.jpg" alt="avatar" />
+										</a><!-- .avatar -->
+									</div>
+									<div class="media-body">
+										<h5 class="media-heading m-0"><a href="javascript:void(0)">John Doe</a></h5>
+									</div>
+									<div class="media-right">
+										<a href="javascript:void(0)" class="btn btn-sm btn-default"><i class="fa fa-rss m-r-xs"></i>Follow</a>
+									</div>
+								</div>
+							</li>
+
+							<li class="list-group-item">
+								<div class="media">
+									<div class="media-left">
+										<a href="javascript:void(0)" class="avatar avatar-sm">
+											<img class="img-responsive" src="../assets/images/104.jpg" alt="avatar" />
+										</a><!-- .avatar -->
+									</div>
+									<div class="media-body">
+										<h5 class="media-heading m-0"><a href="javascript:void(0)">Sara Adams</a></h5>
+									</div>
+									<div class="media-right">
+										<a href="javascript:void(0)" class="btn btn-sm btn-default"><i class="fa fa-user-plus m-r-xs"></i>Add Freind</a>
+									</div>
+								</div>
+							</li>
+
+							<li class="list-group-item">
+								<div class="media">
+									<div class="media-left">
+										<a href="javascript:void(0)" class="avatar avatar-sm">
+											<img class="img-responsive" src="../assets/images/101.jpg" alt="avatar" />
+										</a><!-- .avatar -->
+									</div>
+									<div class="media-body">
+										<h5 class="media-heading m-0"><a href="javascript:void(0)">John Doe</a></h5>
+									</div>
+									<div class="media-right">
+										<a href="javascript:void(0)" class="btn btn-sm btn-default"><i class="fa fa-user-plus m-r-xs"></i>Add Friend</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		<!-- APP FOOTER -->
+		<div class="wrap p-t-0">
+			<footer include-html="footer.html" class="app-footer">
+			</footer>
+		</div>
+		<!-- /#app-footer -->
+	</main>
+	<!--========== END app main -->
+
+	<!-- APP CUSTOMIZER -->
+	<div id="app-customizer" class="app-customizer">
+		<a href="javascript:void(0)" class="app-customizer-toggle theme-color" data-toggle="class" data-class="open" data-active="false" data-target="#app-customizer">
+			<i class="fa fa-gear"></i>
+		</a>
+		<div class="customizer-tabs">
+			<!-- tabs list -->
+			<ul class="nav nav-tabs" role="tablist">
+				<li role="presentation" class="active"><a href="#menubar-customizer" aria-controls="menubar-customizer" role="tab" data-toggle="tab">Menubar</a></li>
+				<li role="presentation"><a href="#navbar-customizer" aria-controls="navbar-customizer" role="tab" data-toggle="tab">Navbar</a></li>
+			</ul><!-- .nav-tabs -->
+
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane in active fade" id="menubar-customizer">
+					<div class="hidden-menubar-top hidden-float">
+						<div class="m-b-0">
+							<label for="menubar-fold-switch">Fold Menubar</label>
+							<div class="pull-right">
+								<input id="menubar-fold-switch" type="checkbox" data-switchery data-size="small" />
+							</div>
+						</div>
+						<hr class="m-h-md">
+					</div>
+					<div class="radio radio-default m-b-md">
+						<input type="radio" id="menubar-light-theme" name="menubar-theme" data-toggle="menubar-theme" data-theme="light">
+						<label for="menubar-light-theme">Light</label>
+					</div>
+
+					<div class="radio radio-inverse m-b-md">
+						<input type="radio" id="menubar-dark-theme" name="menubar-theme" data-toggle="menubar-theme" data-theme="dark">
+						<label for="menubar-dark-theme">Dark</label>
+					</div>
+				</div><!-- .tab-pane -->
+				<div role="tabpanel" class="tab-pane fade" id="navbar-customizer">
+					<!-- This Section is populated Automatically By javascript -->
+				</div><!-- .tab-pane -->
+			</div>
+		</div><!-- .customizer-taps -->
+		<hr class="m-0">
+		<div class="customizer-reset">
+			<button id="customizer-reset-btn" class="btn btn-block btn-outline btn-primary">Reset</button>
+			<a href="https://themeforest.net/item/infinity-responsive-web-app-kit/16230780" class="m-t-sm btn btn-block btn-danger">Buy Now</a>
+		</div>
+	</div><!-- #app-customizer -->
+
+	<!-- SIDE PANEL -->
+	<div id="side-panel" class="side-panel">
+		<div class="panel-header">
+			<h4 class="panel-title">Friends</h4>
+		</div>
+		<div class="scrollable-container">
+			<div class="media-group">
+				<a href="javascript:void(0)" class="media-group-item">
+					<div class="media">
+						<div class="media-left">
+							<div class="avatar avatar-xs avatar-circle">
+								<img src="../assets/images/221.jpg" alt="">
+								<i class="status status-online"></i>
+							</div>
+						</div>
+						<div class="media-body">
+							<h5 class="media-heading">John Doe</h5>
+							<small class="media-meta">active now</small>
+						</div>
+					</div>
+				</a><!-- .media-group-item -->
+
+				<a href="javascript:void(0)" class="media-group-item">
+					<div class="media">
+						<div class="media-left">
+							<div class="avatar avatar-xs avatar-circle">
+								<img src="../assets/images/205.jpg" alt="">
+								<i class="status status-online"></i>
+							</div>
+						</div>
+						<div class="media-body">
+							<h5 class="media-heading">John Doe</h5>
+							<small class="media-meta">active now</small>
+						</div>
+					</div>
+				</a><!-- .media-group-item -->
+
+				<a href="javascript:void(0)" class="media-group-item">
+					<div class="media">
+						<div class="media-left">
+							<div class="avatar avatar-xs avatar-circle">
+								<img src="../assets/images/206.jpg" alt="">
+								<i class="status status-online"></i>
+							</div>
+						</div>
+						<div class="media-body">
+							<h5 class="media-heading">Adam Kiti</h5>
+							<small class="media-meta">active now</small>
+						</div>
+					</div>
+				</a><!-- .media-group-item -->
+
+				<a href="javascript:void(0)" class="media-group-item">
+					<div class="media">
+						<div class="media-left">
+							<div class="avatar avatar-xs avatar-circle">
+								<img src="../assets/images/207.jpg" alt="">
+								<i class="status status-away"></i>
+							</div>
+						</div>
+						<div class="media-body">
+							<h5 class="media-heading">Jane Doe</h5>
+							<small class="media-meta">away</small>
+						</div>
+					</div>
+				</a><!-- .media-group-item -->
+
+				<a href="javascript:void(0)" class="media-group-item">
+					<div class="media">
+						<div class="media-left">
+							<div class="avatar avatar-xs avatar-circle">
+								<img src="../assets/images/208.jpg" alt="">
+								<i class="status status-away"></i>
+							</div>
+						</div>
+						<div class="media-body">
+							<h5 class="media-heading">Sara Adams</h5>
+							<small class="media-meta">away</small>
+						</div>
+					</div>
+				</a><!-- .media-group-item -->
+
+				<a href="javascript:void(0)" class="media-group-item">
+					<div class="media">
+						<div class="media-left">
+							<div class="avatar avatar-xs avatar-circle">
+								<img src="../assets/images/209.jpg" alt="">
+								<i class="status status-away"></i>
+							</div>
+						</div>
+						<div class="media-body">
+							<h5 class="media-heading">Smith Doe</h5>
+							<small class="media-meta">away</small>
+						</div>
+					</div>
+				</a><!-- .media-group-item -->
+
+				<a href="javascript:void(0)" class="media-group-item">
+					<div class="media">
+						<div class="media-left">
+							<div class="avatar avatar-xs avatar-circle">
+								<img src="../assets/images/219.jpg" alt="">
+								<i class="status status-away"></i>
+							</div>
+						</div>
+						<div class="media-body">
+							<h5 class="media-heading">Dana Dyab</h5>
+							<small class="media-meta">away</small>
+						</div>
+					</div>
+				</a><!-- .media-group-item -->
+
+				<a href="javascript:void(0)" class="media-group-item">
+					<div class="media">
+						<div class="media-left">
+							<div class="avatar avatar-xs avatar-circle">
+								<img src="../assets/images/210.jpg" alt="">
+								<i class="status status-offline"></i>
+							</div>
+						</div>
+						<div class="media-body">
+							<h5 class="media-heading">Jeffry Way</h5>
+							<small class="media-meta">2 hours ago</small>
+						</div>
+					</div>
+				</a><!-- .media-group-item -->
+
+				<a href="javascript:void(0)" class="media-group-item">
+					<div class="media">
+						<div class="media-left">
+							<div class="avatar avatar-xs avatar-circle">
+								<img src="../assets/images/211.jpg" alt="">
+								<i class="status status-offline"></i>
+							</div>
+						</div>
+						<div class="media-body">
+							<h5 class="media-heading">Jane Doe</h5>
+							<small class="media-meta">5 hours ago</small>
+						</div>
+					</div>
+				</a><!-- .media-group-item -->
+
+				<a href="javascript:void(0)" class="media-group-item">
+					<div class="media">
+						<div class="media-left">
+							<div class="avatar avatar-xs avatar-circle">
+								<img src="../assets/images/212.jpg" alt="">
+								<i class="status status-offline"></i>
+							</div>
+						</div>
+						<div class="media-body">
+							<h5 class="media-heading">Adam Khoury</h5>
+							<small class="media-meta">22 minutes ago</small>
+						</div>
+					</div>
+				</a><!-- .media-group-item -->
+
+				<a href="javascript:void(0)" class="media-group-item">
+					<div class="media">
+						<div class="media-left">
+							<div class="avatar avatar-xs avatar-circle">
+								<img src="../assets/images/207.jpg" alt="">
+								<i class="status status-offline"></i>
+							</div>
+						</div>
+						<div class="media-body">
+							<h5 class="media-heading">Sara Smith</h5>
+							<small class="media-meta">2 days ago</small>
+						</div>
+					</div>
+				</a><!-- .media-group-item -->
+
+				<a href="javascript:void(0)" class="media-group-item">
+					<div class="media">
+						<div class="media-left">
+							<div class="avatar avatar-xs avatar-circle">
+								<img src="../assets/images/211.jpg" alt="">
+								<i class="status status-offline"></i>
+							</div>
+						</div>
+						<div class="media-body">
+							<h5 class="media-heading">Donia Dyab</h5>
+							<small class="media-meta">3 days ago</small>
+						</div>
+					</div>
+				</a><!-- .media-group-item -->
+			</div>
+		</div><!-- .scrollable-container -->
+	</div><!-- /#side-panel -->
+
+	<!-- build:js ../assets/js/core.min.js -->
+	<script src="../libs/bower/jquery/dist/jquery.js"></script>
+	<script src="../libs/bower/jquery-ui/jquery-ui.min.js"></script>
+	<script src="../libs/bower/jQuery-Storage-API/jquery.storageapi.min.js"></script>
+	<script src="../libs/bower/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+	<script src="../libs/bower/jquery-slimscroll/jquery.slimscroll.js"></script>
+	<script src="../libs/bower/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+	<script src="../libs/bower/PACE/pace.min.js"></script>
+	<!-- endbuild -->
+
+	<!-- build:js ../assets/js/app.min.js -->
+	<script src="../assets/js/library.js"></script>
+	<script src="../assets/js/plugins.js"></script>
+	<script src="../assets/js/app.js"></script>
+	<!-- endbuild -->
+	<script src="../libs/bower/moment/moment.js"></script>
+	<script src="../libs/bower/fullcalendar/dist/fullcalendar.min.js"></script>
+	<script src="../assets/js/fullcalendar.js"></script>
+	<script>
+		includeHTML();
+	</script>
+</body>
+
+</html>

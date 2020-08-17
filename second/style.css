@@ -1,0 +1,287 @@
+
+/*===============================================*/
+/* 1. RESET		 						 */
+/*===============================================*/
+@import "css/reset.css";
+
+/*===============================================*/
+/* 2. GENERAL		 						 */
+/*===============================================*/
+html,
+body {
+position: relative;
+height: 100%;
+width: 100%;
+overflow-x: hidden;
+}
+body {
+font-family: 'Roboto', sans-serif;
+margin: 0;
+padding: 0;
+color: #232323;
+font-size: 14px;
+line-height: 1.4;
+width: 100%;
+-webkit-text-size-adjust: 100%;
+overflow: hidden;
+font-weight:300;
+overflow: scroll;
+}
+
+a {
+text-decoration: none;
+}
+p{
+padding:0px;
+margin:0px;
+line-height:20px;
+}
+button {margin:0; padding:0; border:0;}
+
+#mobile_wrap{
+max-width:1024px;
+margin:auto;
+}
+/* index layout */
+.homepage{
+  width:100%;
+  height:100%;
+background: url(images/bg.jpg) no-repeat left center;
+background-attachment:fixed;
+-webkit-background-size: 100%;
+-moz-background-size: 100%;
+-o-background-size: 100%;
+background-size: 100%;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+animation: bgmove 15s alternate infinite linear;
+}
+@keyframes bgmove {
+  0% { background-position-x: 0; }
+  100% {background-position-x: 100%; }
+}
+
+div.page-content{
+  width:100%; height:100%;
+}
+div.page-content::before{
+
+    content:"";
+    display: block;
+    position:absolute; left:0; top:0;
+    width:100%; height:100%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+/* MAIN NAVIGATION */
+
+.main-nav{
+position: absolute; bottom:10%;
+width:100%; height:40%;
+}
+#footer {
+font-size: 0.7rem;
+width:100%;
+  position: absolute; bottom:2px;
+text-align: center;
+}
+.main-nav ul{
+width:98%; height:100%;
+list-style:none;
+padding:0px;
+margin:0px 1%;
+display:block;
+}
+.main-nav ul li{
+width:47%;
+list-style:none;
+padding:5% 0;
+margin:1%;
+display:inline-block;
+text-align:center;
+position:relative;
+ border-radius: 5%;
+}
+.main-nav ul li:nth-child(1){background: #8b9aff;}
+.main-nav ul li:nth-child(2){background: #f7999a;}
+.main-nav ul li:nth-child(3){background: #fdc87b;}
+.main-nav ul li:nth-child(4){background: #bd72e8;}
+.main-nav ul li:nth-child(4) img { filter: invert(100%);}
+
+.main-nav ul li a{
+color:#fff;
+font-weight: bold;
+}
+.main-nav ul li img{
+display:inline-block;
+max-width:40%;
+}
+.main-nav ul li span{
+display:block;
+text-align:center;
+padding:5px 0 0 0;
+position:relative;
+left:-100%;
+font-size:1rem;
+font-weight: bold;
+}
+
+.main-nav ul li a{
+font-size:11px;
+font-weight:400;
+letter-spacing:1px;
+}
+img.translation { filter: invert(100%);}
+/*  LOGO */
+
+.logo{
+width:100%;
+text-align:center;
+color:#FFFFFF;
+position:relative;
+top:-150px;
+padding:40px 0;
+}
+.logo h1{
+width:100%;
+color:#000;
+font-size:3rem;
+font-weight:900;
+padding:0;
+margin:0px;
+line-height:80px;
+}
+.logo span{
+display:block;
+font-size:1rem;
+letter-spacing:2.5px;
+font-weight:300;
+padding:0px;
+margin:0px;
+line-height:10px;
+font-weight: bold;
+color:#2ad5dc;
+}
+.logo img{
+max-width:50%;
+display:inline-block;
+margin: auto;
+}
+
+}
+/* ==================maps==================== */
+div.map {
+
+  width:100%;
+
+}
+/* =================guest========== */
+/* header */
+#guest_header {
+  width:100%; height:150px; background-color: #3b5998; position: fixed; top:0; z-index: 3;
+}
+#guest_header h1 {
+ text-align: center;
+ position: relative; top:30%;
+}
+#guest_header h1 a {  color:#fff; font-size: 3rem; }
+.guest_menu_btn { width:80px; height:80px; background: url(images/icons/white/menu.png) no-repeat center center / cover;
+position: absolute; left: 4%; top:35px;
+}
+.guest_menuList { background-color:#3b5998; ; z-index:4; width:calc(8% + 80px); height:100%; border-radius: 0 0 30px 0;
+position: fixed; left:-100%; top:140px;}
+.guest_menuList ul { position: absolute; top:10%;}
+.guest_menuList ul li {display: inline-block; width:100%; margin:30% auto; height:30%;  text-align: center;}
+.guest_menuList ul li img { width:50%;}
+.guest_menuList ul li img.translation { width:70%;}
+.guest_menuList ul li a span {display: block; font-size: 1.5rem; color:#fff; font-weight: bold;}
+.guest_menuList_delete {display: block; width: 80px;  height:80px; position: absolute; left:2%; top:1%;}
+.guest_menuList_delete img { width:150%; }
+.write_mention {display: block; width:80px; height: 80px; background: url(images/icons/white/write.png) no-repeat center center / cover;
+filter: invert(100%); position:absolute; top:35px; right:2%;}
+
+/* section */
+#guest_main { width:100%; background-color: #dedede; box-sizing: border-box; padding: 30px 0; position: relative; top: 150px;}
+.mention_box { width:90%; background-color: #ffffff; margin:0 auto 50px; border-radius: 20px;}
+.box_header { width:100%; height:100px; background-color:#ffffff; position: relative; border-radius: 20px 20px 0 0;}
+.user_name {display: block; position: absolute; left:70px;font-size: 3rem; line-height: 100px; font-weight: 400;}
+.user_name::before {content:""; display: block;width:40px; height:40px; border-radius: 40px;
+position:absolute; left:-50px; top:30px; background-color: skyblue; }
+/* .name_Tag { display: block;width:40px; height:40px; border-radius: 40px;
+position:absolute; left:40px; top:30px; background-color: skyblue;} */
+
+
+.mention_setting { width:60px; height:60px; background: url(images/icons/black/setting.png) no-repeat center center / cover;
+position: absolute; right:30px; top: 20px;}
+.setting_list {width:250px; height:200px; background-color:#fff; border:2px solid #eee; position:absolute; top:70px; left:-160px; border-radius: 30px; z-index:3;
+display:none ;}
+.setting_list li { width:100%; height: 40%; margin:5% 0; text-align: center;
+   line-height: 80px;}
+.setting_list li span {font-size: 2rem; font-weight: bold; color:#7469ff;}
+.setting_list li:nth-child(1) span::after {content:""; display: block; width:30%; height:2px; background-color: #0400ff; margin:0 auto;}
+.mention_img {width:100%;}
+.mention_img img {max-width: 100%;}
+.mention_text_box {padding:50px 30px 100px; width:100%;  position: relative; box-sizing: border-box;}
+.mention_text { width:80%;font-size: 2rem; line-height: 2.5rem;}
+.like_empty {display: block;width:70px; height:70px; background: url(images/icons/black/love.png) no-repeat center center / cover;
+  position: absolute; top:40px; right:60px;
+}
+.like_full {display: block;width:70px; height:70px; background: url(images/icons/black/full_heart.png) no-repeat center center / cover;
+  position: absolute; top:40px; right:60px;
+}
+.like_num {display: block; width:100%; font-size: 2rem; position: absolute; bottom:-50px; left:0; text-align: center;}
+
+/*setting_modal */
+.body_modal::after {content:""; display: block; position: fixed;left:0; top:0; width:100%; height:100%; background-color: rgba(0, 0, 0, 0.5); z-index: 10;}
+#revice {width:700px; height:400px; position: fixed; top:calc(50% - 200px); left:calc(50% - 350px); background-color: #fff; border-radius: 20px; z-index:11;
+box-sizing: border-box; padding:80px 0 0 0; display: none;}
+
+#revice p {font-size: 3rem; text-align: center;}
+.input_password {width:70%; height:20%; position: absolute; left:15%; top:40%; border:1px solid #cccccc; font-size: 2.4rem; text-indent: 30px;}
+.passwd_check { width:30%; height:20%; background-color:#3b5998; color:#fff; font-weight: bold; font-size: 2rem;
+position: absolute; bottom:10%; left: 50%; cursor: pointer;}
+.passwd_cancel { width:30%; height:19%; position: absolute; left:15%; bottom:10%;
+  color:#3b5998; border:1px solid #3b5998; font-size: 2rem; text-align: center; line-height: 250%;
+}
+.section_delete {width:700px; height:300px; position: fixed; top:calc(50% - 150px); left:calc(50% - 350px); background-color: #fff; border-radius: 20px; z-index:11;
+box-sizing: border-box; padding:70px 60px 0; display: none; }
+.section_delete p {
+  font-size: 3rem; text-align: center; line-height: 2rem;
+}
+.delete_yes { width:30%; height:70px; position: absolute; left:50%; bottom:25%;
+  color:#3b5998; border:1px solid #3b5998; font-size: 2rem; text-align: center; line-height: 250%;}
+.delete_no {
+  width:30%; height:73px; background-color:#3b5998; color:#fff; font-weight: bold; font-size: 2rem;
+  position: absolute; bottom:25%; left: 15%; cursor: pointer; text-align: center; line-height: 250%;
+}
+#revice2 {width:700px; height:400px; position: fixed; top:calc(50% - 200px); left:calc(50% - 350px); background-color: #fff; border-radius: 20px; z-index:11;
+box-sizing: border-box; padding:80px 0 0 0; display: none;}
+
+#revice2 p {font-size: 3rem; text-align: center;}
+.input_password2 {width:70%; height:20%; position: absolute; left:15%; top:40%; border:1px solid #cccccc; font-size: 2.4rem; text-indent: 30px;}
+.passwd_check2 { width:30%; height:20%; background-color:#3b5998; color:#fff; font-weight: bold; font-size: 2rem;
+position: absolute; bottom:10%; left: 50%; cursor: pointer;}
+.passwd_cancel2 { width:30%; height:19%; position: absolute; left:15%; bottom:10%;
+  color:#3b5998; border:1px solid #3b5998; font-size: 2rem; text-align: center; line-height: 250%;
+}
+
+
+/* write */
+.write_box { z-index:10; position:fixed; bottom:-100%; left:0; box-sizing: border-box;padding:20px 0;
+width:100%; height:800px; background-color: #f1f1f1; border-top: 10px solid #3b5998;}
+/* .img_upload {width:70px; height:70px; background: url(images/icons/black/plus_big.png) no-repeat center center / cover; */
+/* background-color: #fff; border-radius: 70px; filter: invert(100%); position:absolute; left:50px;} */
+.img_address { height:70px; width: 700px; position: absolute; left: 50px; border:0; font-size: 2rem;
+}
+.main_text { width:90%; height:400px; position: absolute; left: 5%; top:90px; font-size: 2.4rem; border:1px solid #666;}
+.write_name_text {display: block;font-size: 1.8rem; position: absolute; bottom:230px; left:50px; }
+.write_name { height:60px; width: 500px; border:0; position: absolute; bottom:220px; left:400px; border-radius: 20px;
+font-size: 2.4rem; border:1px solid #cccccc; text-indent: 30px; }
+.write_passwd_text {display: block;font-size: 1.8rem; position: absolute; bottom:160px; left:50px;}
+.write_passwd { height:60px; width: 500px; border:0; position: absolute; bottom:150px; left:400px; border-radius: 20px;
+font-size: 2.4rem; border:1px solid #cccccc; text-indent: 30px;}
+.write_cancel {display: block; width:20%; height:70px; background: #fff; border:2px solid blue; position: absolute;
+bottom: 40px; left:28%; color:blue; text-align: center;line-height:70px; font-size: 2rem;}
+.submit_texts { width:20%; height:75px; background-color: blue; color:#fff;
+font-size: 2rem; position: absolute; left: 53%; bottom: 40px; border:2px solid #fff;}

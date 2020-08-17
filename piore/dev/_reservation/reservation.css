@@ -1,0 +1,22 @@
+/* 예약 탭 poopup */
+.cst-rsvt-list {
+  margin-top: 50px;
+  width:100%; height:100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5,auto);
+  grid-row-gap:10%;
+  box-sizing: border-box;
+  padding-bottom: 200px;
+  position: relative;
+}
+.cst-rsvt-list input {width:80%; height:40px; float: right; text-indent:10px;}
+.cst-rsvt-list select {width:80%; height:40px;float: right;}
+.cst-rsvt-list textarea {width:80%; height:100%;float: right; text-indent:10px;}
+.cst-rsvt-list label { line-height: 40px;}
+.cst-rsvt-list .name {grid-row: 1;}
+.cst-rsvt-list .phone {grid-row: 2;}
+.cst-rsvt-list .birth_eptday {grid-row: 3;}
+.cst-rsvt-list .cst_eptday {grid-row: 4;}
+.cst-rsvt-list .extraInfo {grid-row: 5; height:100px;}
+.cst-rsvt .Cancel { position: absolute; left:calc(50% - 90px);bottom:2%; }
+.cst-rsvt .input_submit{ position: absolute; left:calc(50% + 10px);bottom:2%; }

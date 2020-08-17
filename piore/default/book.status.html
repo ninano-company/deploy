@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+	<meta name="description" content="Admin, Dashboard, Bootstrap" />
+	<link rel="shortcut icon" sizes="196x196" href="../assets/images/logo.png">
+	<title>Trinity - Bootstrap Admin Template</title>
+
+	<link rel="stylesheet" href="../libs/bower/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.css">
+	<!-- build:css ../assets/css/app.min.css -->
+	<link rel="stylesheet" href="../libs/bower/animate.css/animate.min.css">
+	<link rel="stylesheet" href="../libs/bower/fullcalendar/dist/fullcalendar.min.css">
+	<link rel="stylesheet" href="../libs/bower/perfect-scrollbar/css/perfect-scrollbar.css">
+	<link rel="stylesheet" href="../assets/css/bootstrap.css">
+	<link rel="stylesheet" href="../assets/css/core.css">
+	<link rel="stylesheet" href="../assets/css/app.css">
+	<!-- endbuild -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900,300">
+	<script src="../libs/bower/breakpoints.js/dist/breakpoints.min.js"></script>
+	<script src="../libs/misc/include-html/include-html.js"></script>
+	<script>
+		Breakpoints();
+	</script>
+</head>
+
+<body class="menubar-left menubar-unfold menubar-light theme-primary">
+	<!--============= start main area -->
+
+	<?php
+	function makeRoomCard
+	(
+	 	$roomno,
+		$status,
+		$avatar_name,
+		$momname,
+		$babyname,
+		$dayin,
+		$dayout,
+		$days
+	) {
+
+		$status_state = "입실 중";
+		$status_color = "#188ae2";
+		$status_font_color = "white";
+		$status_state_color = "primary";
+		$icon_color = $status_color;
+
+		$progress_val = ($days / 20);
+
+		if ($status == 0)
+		{
+			$status_state = "빈 방";
+			$status_color = "#fff";
+			$status_font_color = "#6a6c6f";
+			$status_state_color = "dark";
+
+			$avatar_name = "blank";
+			$momname = "-";
+			$babyname = "-";
+			$dayin = "-";
+			$dayout = "-";
+
+			$progress_val = 0;
+
+			$icon_color = "#6a6c6f";
+		}
+		else if ($status == 2)
+		{
+			$status_state = "준비 중";
+			$status_color = "#f9c851";
+			$status_font_color = "#fff";
+			$status_state_color = "warning";
+
+			$avatar_name = "blank";
+			$momname = "-";
+			$babyname = "-";
+			$dayin = "-";
+			$dayout = "-";
+
+			$progress_val = 0;
+
+			$icon_color = "#6a6c6f";
+		}
+
+		$html = '<div class="col-md-3">';
+		$html.= '<div class="panel">';
+		$html.= '<header class="panel-heading" style="background-color:' . $status_color . '; color: ' . $status_font_color . '">';
+		$html.= '	<h4 class="panel-title">' . $roomno . '</h4>';
+		$html.= '</header>';
+
+		$html.= '<hr class="widget-separator">';
+		$html.= '<div class="widget-body p-h-lg">';
+		$html.= '<div class="media">';
+		$html.= '<div class="media-left">';
+		$html.= '<div class="avatar avatar-lg avatar-circle">';
+		$html.= '<img class="img-responsive" src="../assets/images/' . $avatar_name . '.jpg" alt="' . $momname . '">';
+		$html.= '</div>';
+		$html.= '</div>';
+		$html.= '<div class="media-body">';
+		$html.= '<h4 class="media-heading">' . $momname . '</h4>';
+		$html.= '<small class="media-meta">' . $babyname . '</small>';
+		$html.= '<div class="pull-right">';
+		$html.= '<small class="media-meta text-' . $status_state_color . '">' . $status_state . '</small>';
+		$html.= '</div>';
+		$html.= '</div>';
+		$html.= '</div>';
+
+		$html.= '<hr class="widget-separator" style="margin-top:20px; margin-bottom:20px">';
+		$html.= '<div class="clearfix">';
+		$html.= '<div class="pull-left">';
+		$html.= '<div class="pieprogress text-primary" ';
+		$html.= 'data-plugin="circleProgress" ';
+		if ($status == 1) {
+			$html.= 'data-value="' . $progress_val . '"';
+		}
+		else {
+			$html.= 'data-value="0" ';
+		}
+		$html.= 'data-thickness="10" ';
+		$html.= 'data-start-angle="90" ';
+
+		if ($status == 1) {
+			$html.= 'data-empty-fill="rgba(24,138,226,.3)" ';
+		}
+		else {
+			$html.= 'data-empty-fill="rgba(42,42,44,.3)" ';
+		}
+		$html.= 'data-fill="{&quot;color&quot;: &quot;#188ae2&quot;}">';
+
+		if ($status == 1) {
+			$html.= '<strong>' . $days . '일째</strong>';
+		}
+		else {
+			// do nothing;
+		}
+		$html.= '</div>';
+		$html.= '</div>';
+		$html.= '<div class="pull-right">';
+		$html.= '<table class="table">';
+		$html.= '<tr><th>입실일</th><th>퇴실(예정)일</th></tr>';
+		$html.= '<tr><td>' . $dayin . '</td><td>' . $dayout . '</td></tr>';
+		$html.= '</table>';
+		$html.= '</div>';
+		$html.= '</div>';
+
+		$html.= '<hr class="widget-separator" style="margin-top:20px; margin-bottom:20px">';
+		$html.= '<div class="clearfix">';
+		$html.= '<div class="icon-list-item col-md-1 col-sm-1">';
+		$html.= '<i class="fa fa-lg fa-calendar" aria-hidden="true" style="color: ' . $icon_color . '"></i>';
+		$html.= '</div>';
+		$html.= '<div class="icon-list-item col-md-1 col-sm-1">';
+		$html.= '<i class="fa fa-lg fa-commenting" aria-hidden="true" style="color: ' . $icon_color . '"></i>';
+		$html.= '</div>';
+		$html.= '<div class="icon-list-item col-md-1 col-sm-1">';
+		$html.= '<i class="fa fa-lg fa-bed" aria-hidden="true" style="color: ' . $icon_color . '"></i>';
+		$html.= '</div>';
+		$html.= '<div class="icon-list-item col-md-1 col-sm-1">';
+		$html.= '<i class="fa fa-lg fa-cutlery" aria-hidden="true"></i>';
+		$html.= '</div>';
+		$html.= '<div class="icon-list-item col-md-1 col-sm-1">';
+		$html.= '<i class="fa fa-lg fa-user-plus" aria-hidden="true"></i>';
+		$html.= '</div>';
+		$html.= '<div class="icon-list-item col-md-1 col-sm-1">';
+		$html.= '<i class="fa fa-lg fa-sign-in" aria-hidden="true" style="color:' . $icon_color . '"></i>';
+		$html.= '</div>';
+		$html.= '<div class="icon-list-item col-md-1 col-sm-1">';
+		$html.= '<i class="fa fa-lg fa-sign-out" aria-hidden="true"></i>';
+		$html.= '</div>';
+		$html.= '<div class="icon-list-item col-md-1 col-sm-1">';
+		$html.= '<i class="fa fa-lg fa-cog" aria-hidden="true"></i>';
+		$html.= '</div>';
+		$html.= '</div>	<!-- actions -->';
+		$html.= '</div>';
+		$html.= '</div>';
+		$html.= '</div>';
+
+		return $html;
+	}
+?>
+
+	<!-- APP NAVBAR ==========-->
+	<nav include-html="navbar.html" id="app-navbar" class="navbar navbar-inverse navbar-fixed-top primary">
+	</nav>
+	<!--========== END app navbar -->
+
+	<!-- APP ASIDE ==========-->
+	<aside include-html="aside.html" id="menubar" class="menubar light">
+	</aside>
+	<!--========== END app aside -->
+
+	<!-- navbar search -->
+	<div id="navbar-search" class="navbar-search collapse">
+		<div class="navbar-search-inner">
+			<form action="#">
+				<span class="search-icon"><i class="fa fa-search"></i></span>
+				<input class="search-field" type="search" placeholder="search..." />
+			</form>
+			<button type="button" class="search-close" data-toggle="collapse" data-target="#navbar-search" aria-expanded="false">
+				<i class="fa fa-close"></i>
+			</button>
+		</div>
+		<div class="navbar-search-backdrop" data-toggle="collapse" data-target="#navbar-search" aria-expanded="false"></div>
+	</div>
+	<!-- .navbar-search -->
+
+	<!-- APP MAIN ==========-->
+	<main id="app-main" class="app-main">
+		<div class="wrap">
+			<section class="app-content">
+				<div class="row">
+					<?php echo makeRoomCard("101", 1, "sj2", "김선지", "땡이(B21)", "2019-11-01", "2019-11-21", 14) ?>
+					<?php echo makeRoomCard("102", 0, "blank", "-", "-", "-", "-", 0) ?>
+					<?php echo makeRoomCard("103", 1, "jhjeon", "전지현", "사랑이(B22)", "2019-11-05", "2019-11-25", 10) ?>
+					<?php echo makeRoomCard("104", 2, "blank", "-", "-", "-", "-", 0) ?>
+				</div><!-- .row -->
+
+				<div class="row">
+					<?php echo makeRoomCard("201", 2, "blank", "-", "-", "-", "-", 0) ?>
+					<?php echo makeRoomCard("202", 1, "thkim", "김태희", "서희(B14)", "2019-10-28", "2019-11-18", 17) ?>
+					<?php echo makeRoomCard("203", 1, "mashin", "신민아", "영이(B08)", "2019-10-26", "2019-11-16", 19) ?>
+					<?php echo makeRoomCard("204", 0, "blank", "-", "-", "-", "-", 0) ?>
+				</div><!-- .row -->
+
+				<div class="row">
+					<?php echo makeRoomCard("301", 1, "hjgong", "공효진", "지우(B04)", "2019-11-07", "2019-11-27", 8) ?>
+					<?php echo makeRoomCard("302", 1, "yalee", "이영애", "설이(B13)", "2019-11-09", "2019-11-29", 6) ?>
+					<?php echo makeRoomCard("303", 1, "yshan", "한예슬", "보리(B11)", "2019-11-11", "2019-12-01", 4) ?>
+					<?php echo makeRoomCard("304", 2, "blank", "-", "-", "-", "-", 0) ?>
+				</div><!-- .row -->
+
+				<div class="row">
+					<?php echo makeRoomCard("401", 0, "blank", "-", "-", "-", "-", 0) ?>
+					<?php echo makeRoomCard("402", 1, "syko", "고소영", "별이(B01)", "2019-11-04", "2019-11-24", 11) ?>
+					<?php echo makeRoomCard("403", 1, "hnlee", "이하늬", "율(B07)", "2019-11-02", "2019-11-22", 13) ?>
+					<?php echo makeRoomCard("404", 1, "emma", "Emma Watson", "Cathy(B09)", "2019-11-10", "2019-11-30", 5) ?>
+				</div><!-- .row -->
+			</section><!-- .app-content -->
+		</div><!-- .wrap -->
+
+		<!-- APP FOOTER -->
+		<div class="wrap p-t-0">
+			<footer include-html="footer.html" class="app-footer">
+			</footer>
+		</div>
+		<!-- /#app-footer -->
+	</main>
+	<!--========== END app main -->
+
+	<!-- SIDE PANEL -->
+	<div id="side-panel" class="side-panel">
+		<div include-html="sidepanel.html">
+		</div>
+	</div>
+	<!-- /#side-panel -->
+
+	<!-- build:js ../assets/js/core.min.js -->
+	<script src="../libs/bower/jquery/dist/jquery.js"></script>
+	<script src="../libs/bower/jquery-ui/jquery-ui.min.js"></script>
+	<script src="../libs/bower/jQuery-Storage-API/jquery.storageapi.min.js"></script>
+	<script src="../libs/bower/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+	<script src="../libs/bower/jquery-slimscroll/jquery.slimscroll.js"></script>
+	<script src="../libs/bower/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+	<script src="../libs/bower/PACE/pace.min.js"></script>
+	<!-- endbuild -->
+
+	<!-- build:js ../assets/js/app.min.js -->
+	<script src="../assets/js/library.js"></script>
+	<script src="../assets/js/plugins.js"></script>
+	<script src="../assets/js/app.js"></script>
+	<!-- endbuild -->
+	<script src="../libs/bower/moment/moment.js"></script>
+	<script src="../libs/bower/fullcalendar/dist/fullcalendar.min.js"></script>
+	<script src="../assets/js/fullcalendar.js"></script>
+	<script>
+		includeHTML();
+	</script>
+</body>
+
+</html>

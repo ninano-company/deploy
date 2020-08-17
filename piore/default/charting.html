@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+	<meta name="description" content="Admin, Dashboard, Bootstrap" />
+	<link rel="shortcut icon" sizes="196x196" href="../assets/images/logo.png">
+	<title>Trinity - Bootstrap Admin Template</title>
+
+	<link rel="stylesheet" href="../libs/bower/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.css">
+	<!-- build:css ../assets/css/app.min.css -->
+	<link rel="stylesheet" href="../libs/bower/animate.css/animate.min.css">
+	<link rel="stylesheet" href="../libs/bower/fullcalendar/dist/fullcalendar.min.css">
+	<link rel="stylesheet" href="../libs/bower/perfect-scrollbar/css/perfect-scrollbar.css">
+	<link rel="stylesheet" href="../assets/css/bootstrap.css">
+	<link rel="stylesheet" href="../assets/css/core.css">
+	<link rel="stylesheet" href="../assets/css/app.css">
+	<!-- endbuild -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900,300">
+	<style>
+		.fsize-12 {
+			font-size: 12px;
+		}
+
+		tr {
+			height: 37px;
+		}
+
+		.grid_tc {
+			display: grid;
+			grid-template-columns: 2fr 1fr 1fr 2fr;
+		}
+	</style>
+	<script src="../libs/bower/breakpoints.js/dist/breakpoints.min.js"></script>
+	<script src="../libs/misc/include-html/include-html.js"></script>
+	<script>
+		Breakpoints();
+	</script>
+</head>
+
+<body class="menubar-left menubar-unfold menubar-light theme-primary">
+	<!--============= start main area -->
+
+	<!-- APP NAVBAR ==========-->
+	<nav id="app-navbar" class="navbar navbar-inverse navbar-fixed-top primary">
+
+		<!-- navbar header -->
+		<div class="navbar-header">
+			<button type="button" id="menubar-toggle-btn" class="navbar-toggle visible-xs-inline-block navbar-toggle-left hamburger hamburger--collapse js-hamburger">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="hamburger-box"><span class="hamburger-inner"></span></span>
+			</button>
+
+			<button type="button" class="navbar-toggle navbar-toggle-right collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="zmdi zmdi-hc-lg zmdi-more"></span>
+			</button>
+
+			<button type="button" class="navbar-toggle navbar-toggle-right collapsed" data-toggle="collapse" data-target="#navbar-search" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="zmdi zmdi-hc-lg zmdi-search"></span>
+			</button>
+
+			<a href="../index.html" class="navbar-brand">
+				<span class="brand-icon"><i class="fa fa-gg"></i></span>
+				<span class="brand-name">Trinity</span>
+			</a>
+		</div><!-- .navbar-header -->
+
+		<div class="navbar-container container-fluid">
+			<div class="collapse navbar-collapse" id="app-navbar-collapse">
+				<ul class="nav navbar-toolbar navbar-toolbar-left navbar-left">
+					<li class="hidden-float hidden-menubar-top">
+						<a href="javascript:void(0)" role="button" id="menubar-fold-btn" class="hamburger hamburger--arrowalt is-active js-hamburger">
+							<span class="hamburger-box"><span class="hamburger-inner"></span></span>
+						</a>
+					</li>
+					<li>
+						<h5 class="page-title hidden-menubar-top hidden-float">Dashboard</h5>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-toolbar navbar-toolbar-right navbar-right">
+					<li class="nav-item dropdown hidden-float">
+						<a href="javascript:void(0)" data-toggle="collapse" data-target="#navbar-search" aria-expanded="false">
+							<i class="zmdi zmdi-hc-lg zmdi-search"></i>
+						</a>
+					</li>
+
+					<li class="dropdown">
+						<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-hc-lg zmdi-notifications"></i></a>
+						<div class="media-group dropdown-menu animated flipInY">
+							<a href="javascript:void(0)" class="media-group-item">
+								<div class="media">
+									<div class="media-left">
+										<div class="avatar avatar-xs avatar-circle">
+											<img src="../assets/images/221.jpg" alt="">
+											<i class="status status-online"></i>
+										</div>
+									</div>
+									<div class="media-body">
+										<h5 class="media-heading">John Doe</h5>
+										<small class="media-meta">Active now</small>
+									</div>
+								</div>
+							</a><!-- .media-group-item -->
+
+							<a href="javascript:void(0)" class="media-group-item">
+								<div class="media">
+									<div class="media-left">
+										<div class="avatar avatar-xs avatar-circle">
+											<img src="../assets/images/205.jpg" alt="">
+											<i class="status status-offline"></i>
+										</div>
+									</div>
+									<div class="media-body">
+										<h5 class="media-heading">John Doe</h5>
+										<small class="media-meta">2 hours ago</small>
+									</div>
+								</div>
+							</a><!-- .media-group-item -->
+
+							<a href="javascript:void(0)" class="media-group-item">
+								<div class="media">
+									<div class="media-left">
+										<div class="avatar avatar-xs avatar-circle">
+											<img src="../assets/images/207.jpg" alt="">
+											<i class="status status-away"></i>
+										</div>
+									</div>
+									<div class="media-body">
+										<h5 class="media-heading">Sara Smith</h5>
+										<small class="media-meta">idle 5 min ago</small>
+									</div>
+								</div>
+							</a><!-- .media-group-item -->
+
+							<a href="javascript:void(0)" class="media-group-item">
+								<div class="media">
+									<div class="media-left">
+										<div class="avatar avatar-xs avatar-circle">
+											<img src="../assets/images/211.jpg" alt="">
+											<i class="status status-away"></i>
+										</div>
+									</div>
+									<div class="media-body">
+										<h5 class="media-heading">Donia Dyab</h5>
+										<small class="media-meta">idle 5 min ago</small>
+									</div>
+								</div>
+							</a><!-- .media-group-item -->
+						</div>
+					</li>
+
+					<li class="dropdown">
+						<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-hc-lg zmdi-settings"></i></a>
+						<ul class="dropdown-menu animated flipInY">
+							<li><a href="javascript:void(0)"><i class="zmdi m-r-md zmdi-hc-lg zmdi-account-box"></i>My Profile</a></li>
+							<li><a href="javascript:void(0)"><i class="zmdi m-r-md zmdi-hc-lg zmdi-balance-wallet"></i>Balance</a></li>
+							<li><a href="javascript:void(0)"><i class="zmdi m-r-md zmdi-hc-lg zmdi-phone-msg"></i>Connection<span class="label label-primary">3</span></a></li>
+							<li><a href="javascript:void(0)"><i class="zmdi m-r-md zmdi-hc-lg zmdi-info"></i>privacy</a></li>
+						</ul>
+					</li>
+
+					<li class="dropdown">
+						<a href="javascript:void(0)" class="side-panel-toggle" data-toggle="class" data-target="#side-panel" data-class="open" role="button"><i class="zmdi zmdi-hc-lg zmdi-apps"></i></a>
+					</li>
+				</ul>
+			</div>
+		</div><!-- navbar-container -->
+	</nav>
+	<!--========== END app navbar -->
+
+	<!-- APP ASIDE ==========-->
+	<aside include-html="aside.html" id="menubar" class="menubar light">
+	</aside>
+	<!--========== END app aside -->
+
+	<!-- navbar search -->
+	<div id="navbar-search" class="navbar-search collapse">
+		<div class="navbar-search-inner">
+			<form action="#">
+				<span class="search-icon"><i class="fa fa-search"></i></span>
+				<input class="search-field" type="search" placeholder="search..." />
+			</form>
+			<button type="button" class="search-close" data-toggle="collapse" data-target="#navbar-search" aria-expanded="false">
+				<i class="fa fa-close"></i>
+			</button>
+		</div>
+		<div class="navbar-search-backdrop" data-toggle="collapse" data-target="#navbar-search" aria-expanded="false"></div>
+	</div><!-- .navbar-search -->
+
+	<!-- APP MAIN ==========-->
+	<main id="app-main" class="app-main">
+		<div class="wrap">
+			<section class="app-content" id="buttons-demo-page">
+				<div class="col-xs-6">
+					<h1 style="font-size: 48px;">신생아 경과 기록</h1>
+				</div>
+				<div class="col-xs-6">
+					<h4>땡이 / 산모 : 김선지 / 호실 : 1001호</h4>
+				</div>
+				<div class="m-b-lg nav-tabs-horizontal">
+					<!-- tabs list -->
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="active"><a href="#feeding" aria-controls="feeding" role="tab" data-toggle="tab">수유</a></li>
+						<li role="presentation"><a href="#bowel" aria-controls="bowel" role="tab" data-toggle="tab">용변</a></li>
+						<li role="presentation"><a href="#remarks" aria-controls="remarks" role="tab" data-toggle="tab">특이사항</a></li>
+						<li role="presentation"><a href="#submit" aria-controls="submit" role="tab" data-toggle="tab">제출</a></li>
+						<!-- <li role="presentation"><a href="#sizes" aria-controls="sizes" role="tab" data-toggle="tab">Sizes</a></li> -->
+					</ul><!-- .nav-tabs -->
+
+					<!-- Tab panes -->
+					<div class="tab-content p-md">
+						<div role="tabpanel" class="tab-pane in active fade" id="feeding">
+							<div class="row">
+								<div class="col-md-6">
+									<p class="fz-md lh-lg">땡이가 직접 수유를 했나요?</p>
+									<button type="button" class="btn btn-outline mw-md btn-lg btn-success">네</button>
+									<button type="button" class="btn btn-outline mw-md btn-lg btn-info">아니오</button>
+								</div>
+								<div class="col-md-6">
+									<p class="fz-md lh-lg">땡이가 어떤 유종을 먹었나요?</p>
+									<button type="button" class="btn btn-outline mw-md btn-lg btn-danger">모유</button>
+									<button type="button" class="btn btn-outline mw-md btn-lg btn-pink">분유</button>
+									<button type="button" class="btn btn-outline mw-md btn-lg btn-purple">혼유</button>
+								</div><!-- END column -->
+								<div class="col-md-12">
+									<p class="fz-md lh-lg">땡이의 권장 수유량은 얼마인가요?</p>
+									<button type="button" class="btn btn-outline mw-md btn-inverse">10</button>
+									<button type="button" class="btn btn-outline mw-md btn-inverse">20</button>
+									<button type="button" class="btn btn-outline mw-md btn-inverse">30</button>
+									<button type="button" class="btn btn-outline mw-md btn-inverse">40</button>
+									<button type="button" class="btn btn-outline mw-md btn-inverse">50</button>
+									<button type="button" class="btn btn-outline mw-md btn-inverse">60</button>
+									<button type="button" class="btn btn-outline mw-md btn-inverse">70</button>
+									<button type="button" class="btn btn-outline mw-md btn-inverse">80</button>
+									<button type="button" class="btn btn-outline mw-md btn-inverse">90</button>
+									<button type="button" class="btn btn-outline mw-md btn-inverse">100</button>
+									<button type="button" class="btn btn-outline mw-md btn-inverse">110</button>
+									<button type="button" class="btn btn-outline mw-md btn-inverse">120</button>
+									<button type="button" class="btn btn-outline mw-md btn-inverse">130</button>
+									<button type="button" class="btn btn-outline mw-md btn-inverse">140</button>
+								</div><!-- END column -->
+								<div class="col-md-12 margin-top">
+									<button type="button" class="btn mw-md btn-lg btn-warning" href="#bowel" aria-controls="bowel" role="tab" data-toggle="tab">다음</button>
+								</div>
+							</div><!-- .row -->
+						</div><!-- .tab-pane -->
+
+						<div role="tabpanel" class="tab-pane fade" id="bowel">
+							<div class="row">
+								<div class="col-md-6">
+									<p class="fz-md lh-lg">땡이가 구토를 했나요?</p>
+									<button type="button" class="btn btn-outline mw-md btn-lg btn-success">네</button>
+									<button type="button" class="btn btn-outline mw-md btn-lg btn-info">아니오</button>
+								</div><!-- END column -->
+								<div class="col-md-6">
+									<p class="fz-md lh-lg">땡이가 소변을 보았나요?</p>
+									<button type="button" class="btn btn-outline mw-md btn-lg btn-success">네</button>
+									<button type="button" class="btn btn-outline mw-md btn-lg btn-info">아니오</button>
+								</div><!-- END column -->
+								<div class="col-md-12">
+									<p class="fz-md lh-lg">땡이의 대변은 어떤가요?</p>
+									<button type="button" class="btn btn-outline mw-md btn-lg btn-info">보지않음</button>
+									<button type="button" class="btn btn-outline mw-md btn-lg btn-info">쾌변</button>
+									<button type="button" class="btn btn-outline mw-md btn-lg btn-info">설사</button>
+									<button type="button" class="btn btn-outline mw-md btn-lg btn-info">대변</button>
+									<button type="button" class="btn btn-outline mw-md btn-lg btn-info">녹변</button>
+									<button type="button" class="btn btn-outline mw-md btn-lg btn-info">혈변</button>
+								</div><!-- END column -->
+								<div class="col-md-12 margin-top">
+									<button type="button" class="btn mw-md btn-lg btn-warning" href="#feeding" aria-controls="feeding" role="tab" data-toggle="tab">이전</button>
+									<button type="button" class="btn mw-md btn-lg btn-warning" href="#remarks" aria-controls="remarks" role="tab" data-toggle="tab">다음</button>
+								</div>
+							</div><!-- .row -->
+						</div><!-- .tab-pane -->
+
+						<div role="tabpanel" class="tab-pane fade" id="remarks">
+							<div class="row">
+								<div class="col-md-12">
+									<p class="fz-md lh-lg">땡이에게 특이사항이 있나요?</p>
+									<button type="button" class="btn btn-outline mw-xl btn-lg btn-inverse">Code Oozing</button>
+									<button type="button" class="btn btn-outline mw-xl btn-lg btn-inverse">Code Care</button>
+									<button type="button" class="btn btn-outline mw-xl btn-lg btn-inverse">LT 발목 홍반</button>
+									<button type="button" class="btn btn-outline mw-xl btn-lg btn-inverse">Diaper Rash</button>
+									<button type="button" class="btn btn-outline mw-xl btn-lg btn-inverse">Nasal Care</button>
+									<button type="button" class="btn btn-outline mw-xl btn-lg btn-inverse">생리식염수 점적</button>
+									<button type="button" class="btn btn-outline mw-xl btn-lg btn-inverse">콧소리 거침</button>
+									<button type="button" class="btn btn-outline mw-xl btn-lg btn-inverse">Eye Care</button>
+									<button type="button" class="btn btn-outline mw-xl btn-lg btn-inverse">간찰진 Care</button>
+									<button type="button" class="btn btn-outline mw-xl btn-lg btn-inverse">황달</button>
+									<button type="button" class="btn btn-outline mw-xl btn-lg btn-inverse">모유 수유 중단</button>
+									<button type="button" class="btn btn-outline mw-xl btn-lg btn-inverse">CodeCare</button>
+								</div><!-- END column -->
+								<div class="col-md-12 m-h-lg">
+									<button type="button" class="btn mw-md btn-lg btn-warning" href="#bowel" aria-controls="bowel" role="tab" data-toggle="tab">이전</button>
+									<button type="button" class="btn mw-md btn-lg btn-warning" href="#submit" aria-controls="submit" role="tab" data-toggle="tab">다음</button>
+								</div>
+							</div><!-- .row -->
+						</div><!-- .tab-pane -->
+
+						<div role="tabpanel" class="tab-pane fade" id="submit">
+							<div class="row">
+								<div class="col-md-12">
+									<table class="table table-bordered text-center">
+										<colgroup>
+											<col class="col-md-2"/>
+											<col class="col-md-1"/>
+											<col class="col-md-1"/>
+											<col class="col-md-1"/>
+											<col class="col-md-1"/>
+											<col class="col-md-1"/>
+											<col class="col-md-1"/>
+											<col class="col-md-4"/>
+										</colgroup>
+										<tr>
+											<td>시간</td><td>직접 수유</td><td>유종</td><td>수유량(cc)</td><td>구토</td><td>소변</td><td>대변</td><td>특이사항</td>
+										</tr>
+										<tr>
+											<td>11:07</td><td><i class="fa fa-circle-o"></i></td><td>모유</td><td>50</td><td><i class="fa fa-close"></i></td><td><i class="fa fa-circle-o"></i></td><td>쾌변</td><td>Code Oozing, Code Care</td>
+										</tr>
+									</table>
+								</div>
+								<div class="col-md-12 m-h-lg">
+									<button type="button" class="btn mw-md btn-lg btn-warning" href="#remarks" aria-controls="remarks" role="tab" data-toggle="tab">이전</button>
+									<button type="button" class="btn mw-md btn-lg btn-warning" href="#submit" aria-controls="submit" role="tab" data-toggle="tab">제출</button>
+								</div>
+							</div><!-- .row -->
+						</div><!-- .tab-pane -->
+
+						<!--
+						<div role="tabpanel" class="tab-pane fade" id="sizes">
+							<h3 class="m-b-lg">Sizes</h3>
+							<p class="m-h-lg fz-md lh-lg">use <code>.btn</code> and one of size classes ( e.g, <code>btn-lg</code> ) </p>
+							<div class="m-b-xl">
+								<p>
+									<button type="button" class="btn btn-primary btn-lg">Large button</button>
+									<button type="button" class="btn btn-info btn-lg">Large button</button>
+									<button type="button" class="btn btn-success btn-lg">Large button</button>
+									<button type="button" class="btn btn-warning btn-lg">Large button</button>
+									<button type="button" class="btn btn-danger btn-lg">Large button</button>
+									<button type="button" class="btn btn-default btn-lg">Large button</button>
+								</p>
+
+								<p>
+									<button type="button" class="btn btn-primary">Default button</button>
+									<button type="button" class="btn btn-info">Default button</button>
+									<button type="button" class="btn btn-success">Default button</button>
+									<button type="button" class="btn btn-warning">Default button</button>
+									<button type="button" class="btn btn-danger">Default button</button>
+									<button type="button" class="btn btn-default">Default button</button>
+								</p>
+								<p>
+									<button type="button" class="btn btn-primary btn-sm">Small button</button>
+									<button type="button" class="btn btn-info btn-sm">Small button</button>
+									<button type="button" class="btn btn-success btn-sm">Small button</button>
+									<button type="button" class="btn btn-warning btn-sm">Small button</button>
+									<button type="button" class="btn btn-danger btn-sm">Small button</button>
+									<button type="button" class="btn btn-default btn-sm">Small button</button>
+								</p>
+								<p>
+									<button type="button" class="btn btn-primary btn-xs">Extra small button</button>
+									<button type="button" class="btn btn-info btn-xs">Extra small button</button>
+									<button type="button" class="btn btn-success btn-xs">Extra small button</button>
+									<button type="button" class="btn btn-warning btn-xs">Extra small button</button>
+									<button type="button" class="btn btn-danger btn-xs">Extra small button</button>
+									<button type="button" class="btn btn-default btn-xs">Extra small button</button>
+								</p>
+							</div>
+						</div>
+						-->
+					</div><!-- .tab-content -->
+				</div><!-- .nav-tabs-horizontal -->
+			</section><!-- .app-content -->
+		</div><!-- .wrap -->
+		<!-- APP FOOTER -->
+		<div class="wrap p-t-0">
+			<footer include-html="footer.html" class="app-footer">
+			</footer>
+		</div>
+		<!-- /#app-footer -->
+	</main>
+	<!--========== END app main -->
+
+	<!-- APP CUSTOMIZER -->
+
+	<!-- SIDE PANEL -->
+	<div id="side-panel" class="side-panel">
+		<div class="panel-header">
+			<h4 class="panel-title">Friends</h4>
+		</div>
+		<div class="scrollable-container">
+			<div class="media-group">
+				<a href="javascript:void(0)" class="media-group-item">
+					<div class="media">
+						<div class="media-left">
+							<div class="avatar avatar-xs avatar-circle">
+								<img src="../assets/images/221.jpg" alt="">
+								<i class="status status-online"></i>
+							</div>
+						</div>
+						<div class="media-body">
+							<h5 class="media-heading">John Doe</h5>
+							<small class="media-meta">active now</small>
+						</div>
+					</div>
+				</a><!-- .media-group-item -->
+
+				<a href="javascript:void(0)" class="media-group-item">
+					<div class="media">
+						<div class="media-left">
+							<div class="avatar avatar-xs avatar-circle">
+								<img src="../assets/images/205.jpg" alt="">
+								<i class="status status-online"></i>
+							</div>
+						</div>
+						<div class="media-body">
+							<h5 class="media-heading">John Doe</h5>
+							<small class="media-meta">active now</small>
+						</div>
+					</div>
+				</a><!-- .media-group-item -->
+
+				<a href="javascript:void(0)" class="media-group-item">
+					<div class="media">
+						<div class="media-left">
+							<div class="avatar avatar-xs avatar-circle">
+								<img src="../assets/images/206.jpg" alt="">
+								<i class="status status-online"></i>
+							</div>
+						</div>
+						<div class="media-body">
+							<h5 class="media-heading">Adam Kiti</h5>
+							<small class="media-meta">active now</small>
+						</div>
+					</div>
+				</a><!-- .media-group-item -->
+
+				<a href="javascript:void(0)" class="media-group-item">
+					<div class="media">
+						<div class="media-left">
+							<div class="avatar avatar-xs avatar-circle">
+								<img src="../assets/images/207.jpg" alt="">
+								<i class="status status-away"></i>
+							</div>
+						</div>
+						<div class="media-body">
+							<h5 class="media-heading">Jane Doe</h5>
+							<small class="media-meta">away</small>
+						</div>
+					</div>
+				</a><!-- .media-group-item -->
+
+				<a href="javascript:void(0)" class="media-group-item">
+					<div class="media">
+						<div class="media-left">
+							<div class="avatar avatar-xs avatar-circle">
+								<img src="../assets/images/208.jpg" alt="">
+								<i class="status status-away"></i>
+							</div>
+						</div>
+						<div class="media-body">
+							<h5 class="media-heading">Sara Adams</h5>
+							<small class="media-meta">away</small>
+						</div>
+					</div>
+				</a><!-- .media-group-item -->
+
+				<a href="javascript:void(0)" class="media-group-item">
+					<div class="media">
+						<div class="media-left">
+							<div class="avatar avatar-xs avatar-circle">
+								<img src="../assets/images/209.jpg" alt="">
+								<i class="status status-away"></i>
+							</div>
+						</div>
+						<div class="media-body">
+							<h5 class="media-heading">Smith Doe</h5>
+							<small class="media-meta">away</small>
+						</div>
+					</div>
+				</a><!-- .media-group-item -->
+
+				<a href="javascript:void(0)" class="media-group-item">
+					<div class="media">
+						<div class="media-left">
+							<div class="avatar avatar-xs avatar-circle">
+								<img src="../assets/images/219.jpg" alt="">
+								<i class="status status-away"></i>
+							</div>
+						</div>
+						<div class="media-body">
+							<h5 class="media-heading">Dana Dyab</h5>
+							<small class="media-meta">away</small>
+						</div>
+					</div>
+				</a><!-- .media-group-item -->
+
+				<a href="javascript:void(0)" class="media-group-item">
+					<div class="media">
+						<div class="media-left">
+							<div class="avatar avatar-xs avatar-circle">
+								<img src="../assets/images/210.jpg" alt="">
+								<i class="status status-offline"></i>
+							</div>
+						</div>
+						<div class="media-body">
+							<h5 class="media-heading">Jeffry Way</h5>
+							<small class="media-meta">2 hours ago</small>
+						</div>
+					</div>
+				</a><!-- .media-group-item -->
+
+				<a href="javascript:void(0)" class="media-group-item">
+					<div class="media">
+						<div class="media-left">
+							<div class="avatar avatar-xs avatar-circle">
+								<img src="../assets/images/211.jpg" alt="">
+								<i class="status status-offline"></i>
+							</div>
+						</div>
+						<div class="media-body">
+							<h5 class="media-heading">Jane Doe</h5>
+							<small class="media-meta">5 hours ago</small>
+						</div>
+					</div>
+				</a><!-- .media-group-item -->
+
+				<a href="javascript:void(0)" class="media-group-item">
+					<div class="media">
+						<div class="media-left">
+							<div class="avatar avatar-xs avatar-circle">
+								<img src="../assets/images/212.jpg" alt="">
+								<i class="status status-offline"></i>
+							</div>
+						</div>
+						<div class="media-body">
+							<h5 class="media-heading">Adam Khoury</h5>
+							<small class="media-meta">22 minutes ago</small>
+						</div>
+					</div>
+				</a><!-- .media-group-item -->
+
+				<a href="javascript:void(0)" class="media-group-item">
+					<div class="media">
+						<div class="media-left">
+							<div class="avatar avatar-xs avatar-circle">
+								<img src="../assets/images/207.jpg" alt="">
+								<i class="status status-offline"></i>
+							</div>
+						</div>
+						<div class="media-body">
+							<h5 class="media-heading">Sara Smith</h5>
+							<small class="media-meta">2 days ago</small>
+						</div>
+					</div>
+				</a><!-- .media-group-item -->
+
+				<a href="javascript:void(0)" class="media-group-item">
+					<div class="media">
+						<div class="media-left">
+							<div class="avatar avatar-xs avatar-circle">
+								<img src="../assets/images/211.jpg" alt="">
+								<i class="status status-offline"></i>
+							</div>
+						</div>
+						<div class="media-body">
+							<h5 class="media-heading">Donia Dyab</h5>
+							<small class="media-meta">3 days ago</small>
+						</div>
+					</div>
+				</a><!-- .media-group-item -->
+			</div>
+		</div><!-- .scrollable-container -->
+	</div><!-- /#side-panel -->
+
+	<!-- build:js ../assets/js/core.min.js -->
+	<script src="../libs/bower/jquery/dist/jquery.js"></script>
+	<script src="../libs/bower/jquery-ui/jquery-ui.min.js"></script>
+	<script src="../libs/bower/jQuery-Storage-API/jquery.storageapi.min.js"></script>
+	<script src="../libs/bower/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+	<script src="../libs/bower/jquery-slimscroll/jquery.slimscroll.js"></script>
+	<script src="../libs/bower/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+	<script src="../libs/bower/PACE/pace.min.js"></script>
+	<!-- endbuild -->
+
+	<!-- build:js ../assets/js/app.min.js -->
+	<script src="../assets/js/library.js"></script>
+	<script src="../assets/js/plugins.js"></script>
+	<script src="../assets/js/app.js"></script>
+	<!-- endbuild -->
+	<script src="../libs/bower/moment/moment.js"></script>
+	<script src="../libs/bower/fullcalendar/dist/fullcalendar.min.js"></script>
+	<script src="../assets/js/fullcalendar.js"></script>
+	<script>
+		includeHTML();
+	</script>
+</body>
+
+</html>

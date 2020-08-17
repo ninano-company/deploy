@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>방명록</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery-migrate-1.4.1.js"></script>
+    <script src="js/my-app.js?ver=1"></script>
+  </head>
+  <body id="mobile_wrap">
+    <header id="guest_header">
+      <h1><a href="guest.html">GUEST BOOK</a></h1>
+      <div class="guest_menu_btn"></div>
+      <div class="guest_menuList">
+        <ul>
+          <li><a href="index.html" ><img src="images/icons/white/home.png" alt="/" title="" /><span>메인화면</span></a></li>
+          <li><a href="../../akkim/ardev/webAR/index.html" ><img src="images/icons/white/video.png" alt="/" title="" /><span>AR 사용하기</span></a></li>
+          <li><a href="maps.html"><img src="images/icons/white/slider.png" alt="" title="" /><span>지도</span></a></li>
+          <li><a href="../../akkim/ardev/signBoard/index.html"><img class="translation" src="images/icons/white/translation.png" alt="" title="" /><span>번역하기</span></a></li>
+        </ul>
+      </div>
+      <span class="write_mention"></span>
+    </header>
+    <!-- 방명록 -->
+    <main id="guest_main">
+
+    </main>
+    <!-- 글쓰기 -->
+    <form class="write_box">
+      <input type="file" name="imageUp" class="img_address">
+      <textarea class="main_text" name="main_text"></textarea>
+
+      <label for="write_name" class="write_name_text">이름을 입력해주세요</label>
+      <input type="text" class="write_name" name="write_name">
+
+      <label for="password"class="write_passwd_text">비밀번호를 입력해주세요</label>
+      <input type="password" class="write_passwd" name="password">
+
+      <a href="#none" class="write_cancel">취소하기</a>
+      <input type="button" value="등록하기" class="submit_texts" onclick="submitForm();">
+    </form>
+    <!-- 수정/삭제 -->
+    <div id="revice">
+      <p>비밀번호를 입력해주세요.</p>
+      <input type="password" class="input_password">
+      <span class="passwd_cancel">취소하기</span>
+      <input type="submit" value="확인하기" class="passwd_check">
+    </div>
+    <div class="section_delete">
+      <p>
+        정말로 삭제하시겠습니까?
+      </p>
+      <span class="delete_no">아니오</span>
+      <span class="delete_yes">예</span>
+    </div>
+    <div id="revice2">
+      <p>비밀번호를 입력해주세요.</p>
+      <input type="password" class="input_password2">
+      <span class="passwd_cancel2">취소하기</span>
+      <input type="submit" value="확인하기" class="passwd_check2">
+    </div>
+    <script src="js/connect.js?ver=1"></script>
+  </body>
+</html>

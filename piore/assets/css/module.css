@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/* 공통*/
+.B_page input::-webkit-outer-spin-button,
+.B_page input::-webkit-inner-spin-button{
+  display: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+.B_page p {margin-top: 10px;}
+.app-content {width:100%; height:100%; position: relative;}
+.B_page {
+  width:100%;
+  border-bottom: 0;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding:1% 2%;
+}
+.B_page h3 {
+  float:left;
+  margin-top: 10px;
+  margin-right: 50px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.B_header{
+  width:100%;
+  height: 60px;
+  position: relative;
+  border-bottom: 1px solid #cccccc;
+}
+.control {height:100%}
+.control ul {height:100%;}
+.ct_list {
+   float:left; text-align: center; height:100%; padding:0 20px;
+   line-height: 50px; position: relative;color:#888888; font-weight: 500;
+   cursor: pointer;}
+.ct_list:hover {   border-bottom: 2px solid #1576c2;color:#1576c2;}
+li.on { border-bottom: 2px solid #1576c2;color:#1576c2; font-weight: bold;}
+.ct_list::after{ content: ""; display: block; width:0; clear:both;}
+.B_content {position: relative;}
+div.off { display:none;}
+.create { margin-bottom: 50px;}
+.input_border { border:0;border: 1px solid #cccccc; border-radius: 5px;}
+.input_border:focus {outline: none;}
+.p_btn .input_border {width:50%; }
+.p_btn .btn {float:right; margin-right:30px;}
+.selectForm{width: 60px; text-indent: 8px; border-color: #cccccc;}
+.selectForm:focus {outline: none;}
+.selectForm option {text-indent: 8px;}
+.box_left { position: absolute; left:10px; top:10px;}
+.box_right { position: absolute; right:10px; top:10px;}
+@media screen and (max-width:500px){
+  .box_left {display: none;}
+}
+.enroll {max-width:1024px;margin:0 auto; display: none;}

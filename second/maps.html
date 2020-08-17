@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Maps</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/jquery-migrate-1.4.1.js"></script>
+
+</head>
+<body>
+		<header id="maps_header">
+			<span class="maps_menu_btn"></span>
+			<div class="maps_menuList">
+				<ul>
+					<li><a href="index.html" ><img src="images/icons/white/home.png" alt="/" title="" /><span>메인화면</span></a></li>
+					<li><a href="../../akkim/ardev/webAR/index.html" ><img src="images/icons/white/video.png" alt="/" title="" /><span>AR 사용하기</span></a></li>
+					<li><a href="guest.html"><img src="images/icons/white/form.png" alt="" title="" /><span>방명록</span></a></li>
+					<li><a href="../../akkim/ardev/signBoard/index.html"><img class="translation" src="images/icons/white/translation.png" alt="" title="" /><span>번역하기</span></a></li>
+				</ul>
+			</div>
+			<h1><a href="maps.html">MAP</a></h1>
+			<a href="index.html" class="goto_home"></a>
+		</header>
+		<main>
+			<div class="map" id="map" style="height:100%;"></div>
+		</main>
+	<script>
+
+		var map, infoWindow;
+		function initMap() {
+			map = new google.maps.Map(document.getElementById('map'), {
+				center: {lat: 36.127, lng: 128.182},
+				zoom: 16
+			});
+			infoWindow = new google.maps.InfoWindow;
+
+			//Try HTML5 geolocation
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(function(position) {
+					var pos = {
+						lat: position.coords.latitude,
+						lng: position.coords.longitude
+					};
+
+					infoWindow.setPosition(pos);
+					infoWindow.setContent('현재 위치');
+					infoWindow.open(map);
+					map.setCenter(pos);
+				}, function() {
+					handleLocationError(true, infoWindow, map.getCenter());
+				});
+			} else {
+				// Browser doesn't support Geolocation
+				handleLocationError(false, infoWindow, map.getCenter());
+			}
+		}
+
+		function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+			infoWindow.setPosition(pos);
+			infoWindow.setContent(browserHasGeolocation ?
+					'Error: The Geolocation service failed.' :
+					'Error: Your browser doesn\'t support geolocation.');
+			infoWindow.open(map);
+		}
+	</script>
+	<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUm4IgFj0lKUxKQUCQsadTAdDVA80Mdkk&callback=initMap"></script>
+	<style>
+	#maps_header { width:100%; height:60px; background-color:#3b5998;position: fixed; top:0; z-index: 3;}
+	#maps_header h1 { text-align: center; width:60%; margin: 0 auto;
+	position: relative; top:10px;}
+	#maps_header h1  a {color:#fff; font-size: 2rem;}
+	.maps_menu_btn {width:40px; height:40px; background: url(images/icons/white/menu.png) no-repeat center center / cover;
+	position: absolute; left: 4%; top:10px; }
+	.goto_home {display: block; width: 50px;  height:50px; position: absolute; right:10px; top:5px;
+		background: url("images/icons/white/menu_close.png") no-repeat center center / cover;
+	}
+	.maps_menuList {
+	  background-color:#3b5998; ; z-index:4; width:calc(8% + 40px); height:100%;
+	  position: fixed; left:-100%; top:60px;
+	}
+	.maps_menuList ul { position: absolute; top:10%;}
+	.maps_menuList ul li {display: inline-block; width:100%; margin:30% auto; height:50px;  text-align: center;}
+	.maps_menuList ul li img { width:50%;}
+	.maps_menuList ul li img.translation { width:70%;}
+	.maps_menuList ul li a span {display: block; font-size: 11px;color:#fff; font-weight: bold;}
+	.maps_menuList_delete {display: block; width: 40px;  height:40px; position: absolute; left:calc(100% - 40px); top:5px;}
+	.maps_menuList_delete img { width:150%; }
+
+	main { width:100%; height: 100%; padding: 70px 5% 0; background-color: #dedede; box-sizing: border-box;}
+	#map { border:1px solid #cccccc; border-radius: 20px;}
+	</style>
+	<script src="js/my-app.js"></script>
+</body>
+</html>

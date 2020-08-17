@@ -1,0 +1,120 @@
+@charset "UTF-8";
+/* 기본 페이지 설정*/
+.B_page input::-webkit-outer-spin-button,
+.B_page input::-webkit-inner-spin-button,
+.B_page input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+.B_page p {margin-top: 10px;}
+.app-content { position: relative;}
+.B_page {
+  width:100%;
+  border-bottom: 0;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding:1% 2%;
+}
+.B_page h3 {
+  float:left;
+  margin-top: 10px;
+  margin-right: 50px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.B_header{
+  width:100%;
+  height: 60px;
+  position: relative;
+  border-bottom: 1px solid #cccccc;
+}
+.control {height:100%}
+.control ul {height:100%;}
+.ct_list {
+   float:left; text-align: center; height:100%; padding:0 20px;
+   line-height: 50px; position: relative;color:#888888; font-weight: 500;
+   cursor: pointer;}
+.ct_list:hover {   border-bottom: 2px solid #1576c2;color:#1576c2;}
+li.on { border-bottom: 2px solid #1576c2;color:#1576c2; font-weight: bold;}
+.ct_list::after{ content: ""; display: block; width:0; clear:both;}
+.B_content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3,auto);}
+div.off { display:none;}
+.buttons { position: absolute; left: calc(50% - 100px); bottom:0px;}
+.create { margin-bottom: 50px;}
+.input_border {width:110px; border:0;border: 1px solid #cccccc;}
+.input_border:focus {outline: none;}
+.selectForm{width: 60px; text-indent: 8px; border-color: #cccccc;}
+.selectForm:focus {outline: none;}
+.selectForm option {text-indent: 8px;}
+.box_left { position: absolute; left:10px; top:10px;}
+.box_right { position: absolute; right:10px; top:10px;}
+@media screen and (max-width:500px){
+  .box_left {display: none;}
+}
+/* 인사관리 */
+.content_srch { grid-row: 1; position: relative; height:60px;}
+.content_table {grid-row: 2; min-height:200px;}
+.content_footer { grid-row: 3; position: relative; height:100px;}
+.content_pageN {display: inline-block; ;width:40px;
+text-align: center;}
+/* 인사관리 끝 */
+
+/* popup */
+.enroll {max-width:1024px;margin:0 auto; display: none;}
+
+/* 직원등록 popup*/
+.worker_info_list {
+  margin-top: 50px;
+  width:100%; height:100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(11,auto);
+  grid-row-gap:2%;
+  box-sizing: border-box;
+  padding-bottom: 200px;
+  position: relative;
+}
+.worker_info_list input {width:80%; height:40px; float: right; text-indent:10px;}
+.worker_info_list select {width:80%; height:40px;float: right;}
+.worker_info_list textarea {width:80%; height:100%;float: right; text-indent:10px;}
+.worker_info_list label { line-height: 40px;}
+.worker_info_list .id {grid-row: 1;}
+.worker_info_list .passwd {grid-row: 2;}
+.worker_info_list .passwd_repeat { grid-row: 3;}
+.worker_info_list .name {grid-row: 4;}
+.worker_info_list .phone {grid-row: 5;}
+.worker_info_list .Email {grid-row: 6;}
+.worker_info_list .birthday {grid-row: 7;}
+.worker_info_list .join_date {grid-row: 8;}
+.worker_info_list .address {grid-row: 9;}
+.worker_info_list .rank {grid-row: 10;}
+.worker_info_list .extraInfo {grid-row: 11; height:100px;}
+.worker_info .Cancel {position: absolute; left:calc(50% - 90px);bottom:2%;}
+.worker_info .input_submit {position: absolute; left:calc(50% + 10px);bottom:2%;}
+
+/* 예약 탭 poopup */
+.cst-rsvt-list {
+  margin-top: 50px;
+  width:100%; height:100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5,auto);
+  grid-row-gap:10%;
+  box-sizing: border-box;
+  padding-bottom: 200px;
+  position: relative;
+}
+.cst-rsvt-list input {width:80%; height:40px; float: right; text-indent:10px;}
+.cst-rsvt-list select {width:80%; height:40px;float: right;}
+.cst-rsvt-list textarea {width:80%; height:100%;float: right; text-indent:10px;}
+.cst-rsvt-list label { line-height: 40px;}
+.cst-rsvt-list .name {grid-row: 1;}
+.cst-rsvt-list .phone {grid-row: 2;}
+.cst-rsvt-list .birth_eptday {grid-row: 3;}
+.cst-rsvt-list .cst_eptday {grid-row: 4;}
+.cst-rsvt-list .extraInfo {grid-row: 5; height:100px;}
+.cst-rsvt .Cancel { position: absolute; left:calc(50% - 90px);bottom:2%; }
+.cst-rsvt .input_submit{ position: absolute; left:calc(50% + 10px);bottom:2%; }
